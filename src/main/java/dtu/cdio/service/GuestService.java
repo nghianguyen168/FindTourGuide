@@ -17,4 +17,14 @@ public class GuestService {
 	public int addItem(Guest guest) {
 		return guestDAO.addItem(guest);
 	}
+	
+	public Guest guestLogin(String username,String password) {
+		return guestDAO.guestLogin(username, password);
+	}
+	public Guest checkGuest(String username) {
+		return guestDAO.checkGuest(username);
+	}
+	public int editItem(Guest guest) {
+		return guestDAO.editItem(guest);
+	}
 }

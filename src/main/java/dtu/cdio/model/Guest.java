@@ -4,9 +4,11 @@ import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Guest {
 	private int guest_Id;
 	private String username;
@@ -18,10 +20,6 @@ public class Guest {
 	private String email;
 	private String phone;
 	private int status;
-	public Guest() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 }

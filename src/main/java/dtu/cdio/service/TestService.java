@@ -19,4 +19,6 @@ public class TestService {
 	public List<Test> testList(){
 		return testDAO.userList();
 	}
+	
+
 }

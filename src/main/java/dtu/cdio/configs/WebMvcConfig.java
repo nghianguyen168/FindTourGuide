@@ -68,9 +68,7 @@ public class WebMvcConfig {
 	        jdbcTemplate.setDataSource(getDataSource());
 	        return jdbcTemplate;
 	    }
+	    
 	 
-	/*
-	 * @Bean public EmployeeDAO employeeDAO(){ EmployeeDAOImpl empDao = new
-	 * EmployeeDAOImpl(); empDao.setJdbcTemplate(jdbcTemplate()); return empDao; }
-	 */
+	 
 }

@@ -10,7 +10,7 @@ public class GuestMapper implements RowMapper<Guest> {
 	@Override
 	public Guest mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Guest guest = new Guest();
-		guest.setGuest_Id(rs.getInt("id"));
+		guest.setGuest_Id(rs.getInt("guest_id"));
 		guest.setUsername(rs.getString("username"));;
 		guest.setPassword(rs.getString("password"));
 		guest.setFullname(rs.getString("fullname"));
