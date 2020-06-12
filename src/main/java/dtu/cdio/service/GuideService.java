@@ -51,14 +51,11 @@ public class GuideService {
 	public List<Guide> findAllByPage(int offset){
 		return guideDAO.findAllByPage(offset);
 	}
-	public List<Guide> searchGuide(String location,Date startDate,Date endDate,String lang){
-		return guideDAO.searchGuide(location, startDate, endDate, lang);
+	public List<Guide> searchGuide(String city,Date startDate,Date endDate,String lang,String country){
+		return guideDAO.searchGuide(city, startDate, endDate, lang, country);
 	
 	}
-	/*
-	 * public List<Guide> getItemById(int city_id){ return
-	 * guideDAO.getItemByPlace(city_id); }
-	 */
+	
 	public Guide getGuideById(int guide_id) {
 		return  guideDAO.getItemById(guide_id);
 	}

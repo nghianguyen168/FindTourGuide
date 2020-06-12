@@ -13,6 +13,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 //class config
@@ -20,9 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @ComponentScan("dtu.cdio.*")
-
 @EnableTransactionManagement
-
 //Load to Environment.
 @PropertySources({ @PropertySource("classpath:jdbc.properties") })
 public class WebMvcConfig {
@@ -68,6 +68,8 @@ public class WebMvcConfig {
 	        jdbcTemplate.setDataSource(getDataSource());
 	        return jdbcTemplate;
 	    }
+	    
+	 
 	    
 	 
 	 

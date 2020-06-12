@@ -16,8 +16,7 @@ public class GuideMapper implements RowMapper<Guide> {
 		guide.setFullname(rs.getString("fullname"));
 		guide.setImage(rs.getString("image"));
 		guide.setBirthday(rs.getTimestamp("birthday"));
-		guide.setIdCard_before(rs.getString("idCard_before"));
-		guide.setIdCard_after(rs.getString("idCard_after"));
+		guide.setIdCard(rs.getString("idCard"));
 		guide.setGender(rs.getString("gender"));
 		guide.setExperience(rs.getInt("experience"));
 		guide.setCost(rs.getInt("cost"));
@@ -28,6 +27,7 @@ public class GuideMapper implements RowMapper<Guide> {
 		guide.setCity_id(rs.getString("city_id"));
 		guide.setStatus(rs.getInt("status"));
 		guide.setTour_sum(rs.getInt("tour_sum"));
+		guide.setLock_status(rs.getInt("lock_status"));
 		return guide;
 	}
 

@@ -1,15 +1,16 @@
 package dtu.cdio.controllers;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import dtu.cdio.dao.TestDAO;
-import dtu.cdio.model.City;
 import dtu.cdio.model.Guest;
 import dtu.cdio.model.Guide;
 import dtu.cdio.model.GuideLanguage;
@@ -66,5 +67,9 @@ public class TestController {
 		return "test";
 		
 		
+	}
+	@RequestMapping(value = "/testmethod", method = RequestMethod.GET , produces="application/json")
+	public ResponseEntity<?> testMethod(){
+		return new ResponseEntity<>("Hello world", HttpStatus.OK);
 	}
 }

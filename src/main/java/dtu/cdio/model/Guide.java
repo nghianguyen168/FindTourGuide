@@ -1,7 +1,6 @@
 package dtu.cdio.model;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,9 +15,8 @@ public class Guide {
 	private String password;
 	private String fullname;
 	private String image;
-	private Timestamp birthday;
-	private String idCard_before;
-	private String idCard_after;
+	private Date birthday;
+	private String idCard;
 	private String gender;
 	private int experience;
 	private int cost;
@@ -29,5 +27,5 @@ public class Guide {
 	private String city_id;
 	private int status;
 	private int tour_sum;
-	
+	private int lock_status;
 }
