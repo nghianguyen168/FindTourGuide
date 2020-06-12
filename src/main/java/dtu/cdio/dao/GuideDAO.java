@@ -32,7 +32,7 @@ public class GuideDAO {
 	}
 	//ok
 	public List<Guide> getItemByPlace(String city_id) {
-		final String SQL="SELECT * FROM guide WHERE city_id=? WHERE status=0 AND lock_status=0";
+		final String SQL="SELECT * FROM guide WHERE city_id=? AND status=0 AND lock_status=0";
 		return jdbcTemplate.query(SQL, new GuideMapper(), city_id);
 	}
 	
@@ -45,7 +45,7 @@ public class GuideDAO {
 	
 	//ok
 	public List<Guide> getItemByGender(String gender) {
-		final String SQL="SELECT * FROM guide WHERE gender=? WHERE status=0 AND lock_status=0";
+		final String SQL="SELECT * FROM guide WHERE gender=? AND status=0 AND lock_status=0";
 		return jdbcTemplate.query(SQL,new GuideMapper(), gender);
 	}
 	
