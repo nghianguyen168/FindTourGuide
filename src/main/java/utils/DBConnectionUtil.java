@@ -60,8 +60,6 @@ public class DBConnectionUtil {
 		}
 	}
 	
-	
-	
 	public static void close(ResultSet rs) {
 		if(rs!=null) {
 			try {

@@ -26,10 +26,6 @@ public class SpringMVCApplication implements WebApplicationInitializer  {
         ServletRegistration.Dynamic registration = servletCxt.addServlet("app", servlet);
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
-        
-       
-        
-		
 	}
 	
 }

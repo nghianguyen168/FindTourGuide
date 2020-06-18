@@ -30,4 +30,5 @@ public class Guide {
 	private int status;
 	private int tour_sum;
 	
+	
 }

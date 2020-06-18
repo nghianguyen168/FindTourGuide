@@ -33,7 +33,4 @@ public class Employee {
 	public void setPosition(String position) {
 		this.position = position;
 	}
-	   
-	   
-	
 }	

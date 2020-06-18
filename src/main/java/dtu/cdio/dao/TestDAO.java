@@ -24,6 +24,4 @@ public class TestDAO {
 		String sql = "SELECT * FROM test";
 		return jdbcTemplate.query(sql, new TestMapper());
 	}
-
-	
 }

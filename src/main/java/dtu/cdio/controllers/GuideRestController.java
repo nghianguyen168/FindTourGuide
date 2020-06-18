@@ -71,6 +71,4 @@ public class GuideRestController {
 		return guideService.getGuideById(guide_id);
 	}
 	
-	
-	
 }
