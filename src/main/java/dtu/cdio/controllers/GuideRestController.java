@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +21,7 @@ import utils.RandomPasswordUtils;
 import utils.SendGmailUtil;
 import utils.StringUtil;
 
+@CrossOrigin( origins = "*" )
 @RestController
 @RequestMapping("guide")
 @JsonFormat
@@ -34,6 +35,7 @@ public class GuideRestController {
 	public String welcome() {
 		return "Welcome to RestTemplate Example.";
 	}
+	
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public List<Guide> gistGuideList(@RequestParam("page") int curentPage) {
@@ -51,6 +53,7 @@ public class GuideRestController {
 		return guideService.findAllByPage(offset);
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = "search", method = RequestMethod.GET)
 	public List<Guide> guideSearch(@RequestParam("location") String location, @RequestParam("country") String country,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
@@ -58,28 +61,31 @@ public class GuideRestController {
 		return guideService.searchGuide(location, startDate, endDate, language, country);
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = "index/{place}", method = RequestMethod.GET)
 	public List<Guide> listByPlace(@PathVariable("place") String place) {
 		return guideService.getItemByPlace(place);
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = "gender/{gender}", method = RequestMethod.GET)
-
 	public List<Guide> getListByGender(@PathVariable("gender") String gender) {
 		return guideService.getItemByGender(gender);
 	}
 
+	@CrossOrigin
 	@RequestMapping(value = "info/{guide_id}",method = RequestMethod.GET)
 	public Guide  getGuideById(@PathVariable("guide_id") int guide_id) {
 		return guideService.getGuideById(guide_id);
 	}
 
-	
+	@CrossOrigin
 	@RequestMapping(value = "add",method = RequestMethod.POST)
 	public int addGuideUser(@ModelAttribute("guide") Guide guide) {
 		return guideService.addItem(guide);
 	}
 	
+	@CrossOrigin
 	@RequestMapping(value = "create_guide/{guideId}",method = RequestMethod.GET)
 	public int access_guide(@PathVariable int guideId) {
 		Guide guide = guideService.getGuideById(guideId);
