@@ -1,5 +1,7 @@
 package dtu.cdio.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,4 +29,6 @@ public class GuestService {
 	public int editItem(Guest guest) {
 		return guestDAO.editItem(guest);
 	}
+	
+
 }
