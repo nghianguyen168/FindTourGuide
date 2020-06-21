@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -71,4 +70,21 @@ public class GuideService {
 	public int unlockAccountGuide(int guide_id) {
 		return guideDAO.UnlockAccount(guide_id);
 	}
+	public Guide guideLogin(String username,String password) {
+		return guideDAO.guideLogin(username, password);
+	}
+	
+	public Boolean checkUsername(String username) {
+		return guideDAO.checkUsername(username);
+	}
+	
+	public Boolean checkMail(String mail) {
+		return guideDAO.checkMail(mail);
+		
+	}
+	public Boolean checkIdCard(String idCard) {
+		return guideDAO.checkIdCard(idCard);
+	}
+
+
 }

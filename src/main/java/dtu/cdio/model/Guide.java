@@ -1,6 +1,6 @@
 package dtu.cdio.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,4 +28,5 @@ public class Guide {
 	private int status;
 	private int tour_sum;
 	private int lock_status;
+	
 }

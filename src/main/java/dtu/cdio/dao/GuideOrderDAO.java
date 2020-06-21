@@ -20,7 +20,6 @@ public class GuideOrderDAO {
 	public final String SUCCESS_TOUR="UPDATE guide_order SET status = 3 WHERE order_id=?";
 	
 	public int book(int guide_id,int user_id,Date from_day,Date thro_date,String place,int cost) {
-		
 		return jdbcTemplate.update(INSERT_SQL,guide_id,user_id,from_day,thro_date,place,cost);
 	}
 	
