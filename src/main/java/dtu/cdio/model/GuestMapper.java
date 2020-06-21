@@ -14,7 +14,7 @@ public class GuestMapper implements RowMapper<Guest> {
 		guest.setUsername(rs.getString("username"));;
 		guest.setPassword(rs.getString("password"));
 		guest.setFullname(rs.getString("fullname"));
-		guest.setDate_Of_Birth(rs.getTimestamp("date_of_birth"));
+		guest.setDate_Of_Birth(rs.getDate("date_of_birth"));
 		guest.setImage(rs.getString("image"));
 		guest.setCountry(rs.getString("country"));
 		guest.setEmail(rs.getString("email"));

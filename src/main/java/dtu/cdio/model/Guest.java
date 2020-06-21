@@ -1,5 +1,6 @@
 package dtu.cdio.model;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ public class Guest {
 	private String username;
 	private String password;
 	private String fullname;
-	private Timestamp date_Of_Birth;
+	private Date date_Of_Birth;
 	private String image;
 	private String country;
 	private String email;

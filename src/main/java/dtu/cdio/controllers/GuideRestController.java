@@ -31,7 +31,6 @@ public class GuideRestController {
 	private GuideService guideService;
 
 	@RequestMapping("/rest")
-
 	public String welcome() {
 		return "Welcome to RestTemplate Example.";
 	}
@@ -100,8 +99,5 @@ public class GuideRestController {
 		SendGmailUtil.sendGmail(guide.getEmail(), sub, msg);
 		return guideService.unlockAccountGuide(guideId);
 	}
-	
-	
-	
 	
 }

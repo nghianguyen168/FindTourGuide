@@ -1,5 +1,6 @@
 package dtu.cdio.controllers;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class TestController {
 		
 		
 		 Guest guest = new Guest(1, "nghia", "123",
-		 "hoohi",Timestamp.valueOf("2018-11-12 01:02:03.123456789"), "ad.jpg",
+		 "hoohi",Date.valueOf("2018-11-12"), "ad.jpg",
 		 "Viet Nam", "nfdhf@gmail.com", "0968997331", 1); 
 		/* guestService.addItem(guest); */
 		 
