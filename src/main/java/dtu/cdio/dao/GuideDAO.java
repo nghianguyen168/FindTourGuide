@@ -142,6 +142,12 @@ public class GuideDAO {
 
 		return true;
 	}
+	
+	public List<Guide> topGuide(){
+		List<Guide> topGuideList = new ArrayList<Guide>();
+		final String sql = "SELECT guide.*,city.* FROM guide INNER JOIN city ON guide.city_id = city.city_id WHERE status=0 AND lock_status=0 ORDER BY guide.tour_sum DESC LIMIT 10 ";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Guide.class));
+	}
 
 
 }

@@ -139,4 +139,9 @@ public class GuideRestController {
 		return guideService.checkUsername(username);
 	}
 	
+	@GetMapping("top")
+	public List<Guide> topGuide(){
+		return guideService.getTopGuideList();
+	}
+	
 }

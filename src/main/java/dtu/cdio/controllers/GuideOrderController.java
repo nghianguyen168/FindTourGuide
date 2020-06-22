@@ -29,7 +29,7 @@ public class GuideOrderController {
 	//1 => dang doi confirm
 	//2 => confirm-> trong tour
 	//3 =? Da xong
-	@RequestMapping(value = "book",method = RequestMethod.POST)
+	@RequestMapping(value = "book",method = RequestMethod.GET)
 	public int book(@ModelAttribute("guide_Oder") Guide_Order guide_Order) {
 		return guideOderService.book(guide_Order.getGuest_id(), guide_Order.getGuest_id(), guide_Order.getFrom_day(), guide_Order.getThro_day(), guide_Order.getPlace(), guide_Order.getCost());
 	}

@@ -85,6 +85,9 @@ public class GuideService {
 	public Boolean checkIdCard(String idCard) {
 		return guideDAO.checkIdCard(idCard);
 	}
+	public List<Guide> getTopGuideList(){
+		return guideDAO.topGuide();
+	}
 
 
 }
