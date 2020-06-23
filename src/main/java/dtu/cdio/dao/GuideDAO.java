@@ -57,7 +57,7 @@ public class GuideDAO {
 				+ "description,phone,email,country,city_id) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		return jdbcTemplate.update(SQL, guide.getUsername(), guide.getPassword(), guide.getFullname(), guide.getImage(),
 				guide.getBirthday(), guide.getIdCard(), guide.getGender(), guide.getExperience(), guide.getCost(),
-				guide.getDecription(), guide.getPhone(), guide.getEmail(), guide.getCountry(), guide.getCity_id());
+				guide.getDescription(), guide.getPhone(), guide.getEmail(), guide.getCountry(), guide.getCity_id());
 	}
 
 	public int editItem(Guide guide) {
@@ -65,7 +65,7 @@ public class GuideDAO {
 				+ "description=?,phone=?,email=?,country=?,city_id=? WHERE guide_id=?";
 		return jdbcTemplate.update(SQL, guide.getUsername(), guide.getPassword(), guide.getFullname(), guide.getImage(),
 				guide.getBirthday(), guide.getIdCard(), guide.getGender(), guide.getExperience(), guide.getCost(),
-				guide.getDecription(), guide.getPhone(), guide.getEmail(), guide.getCountry(), guide.getCity_id(),
+				guide.getDescription(), guide.getPhone(), guide.getEmail(), guide.getCountry(), guide.getCity_id(),
 				guide.getGuide_id());
 	}
 

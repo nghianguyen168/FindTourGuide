@@ -20,7 +20,7 @@ public class GuideMapper implements RowMapper<Guide> {
 		guide.setGender(rs.getString("gender"));
 		guide.setExperience(rs.getInt("experience"));
 		guide.setCost(rs.getInt("cost"));
-		guide.setDecription(rs.getString("description"));
+		guide.setDescription(rs.getString("description"));
 		guide.setPhone(rs.getString("phone"));
 		guide.setEmail(rs.getString("email"));
 		guide.setCountry(rs.getString("country"));

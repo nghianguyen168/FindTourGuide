@@ -1,10 +1,15 @@
 package dtu.cdio.dao;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import dtu.cdio.model.Guest;
+import dtu.cdio.model.Guide;
 
 
 
@@ -18,6 +23,8 @@ public class GuideOrderDAO {
 	public final String CONFIRM_SQL ="UPDATE guide_order SET status = 2 WHERE order_id=? AND guide_id=?";
 	public final String GUIDE_CANCEL_SQL="UPDATE guide_order SET status = 0 WHERE order_id=? AND guide_id=?";
 	public final String SUCCESS_TOUR="UPDATE guide_order SET status = 3 WHERE order_id=?";
+	public final String GUIDE_HISTORY ="SELECT * FROM guide_order WHERE guide_id=? AND status =3";
+	public final String GUEST_HISTORY ="SELECT * FROM guide_order WHERE user_id=? AND status =3";
 	
 	public int book(int guide_id,int user_id,Date from_day,Date thro_date,String place,int cost) {
 		return jdbcTemplate.update(INSERT_SQL,guide_id,user_id,from_day,thro_date,place,cost);
@@ -33,6 +40,11 @@ public class GuideOrderDAO {
 	public int success_tour(int order_id) {
 		return jdbcTemplate.update(SUCCESS_TOUR,order_id);
 	}
+	
+	public List<Guide> guide_history_book(int guide_id){
+		return jdbcTemplate.query(GUIDE_HISTORY, new BeanPropertyRowMapper<>(Guide.class),guide_id);
+	}
+	
 	
 	
 }

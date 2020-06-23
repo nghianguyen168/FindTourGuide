@@ -20,7 +20,7 @@ public class Guide {
 	private String gender;
 	private int experience;
 	private int cost;
-	private String decription;
+	private String description;
 	private String phone;
 	private String email;
 	private String country;

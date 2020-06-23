@@ -2,11 +2,13 @@ package dtu.cdio.controllers;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.servlet.annotation.MultipartConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import dtu.cdio.model.Guide;
 import dtu.cdio.model.Guide_Order;
 import dtu.cdio.service.GuideOderService;
 
@@ -50,6 +53,12 @@ public class GuideOrderController {
 	public int success_tour(@RequestParam("order_id") int order_id) {
 		return guideOderService.success_tour(order_id);
 	}
+	
+	@GetMapping("guide/history")
+	public List<Guide> guide_History_Book(int guide_id){
+		return guideOderService.guide_history_book(guide_id);
+	}
+	
 	
 	
 }

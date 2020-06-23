@@ -88,6 +88,9 @@ public class GuideService {
 	public List<Guide> getTopGuideList(){
 		return guideDAO.topGuide();
 	}
+	
+	
+	
 
 
 }
