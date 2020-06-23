@@ -37,14 +37,21 @@ public class GuideDAO {
 		final String SQL = "SELECT * FROM guide WHERE city_id=? AND status=0 AND lock_status=0";
 		return jdbcTemplate.query(SQL, new GuideMapper(), city_id);
 	}
-
-	public List<Guide> searchGuide(String city, Date startDate, Date endDate, String lang, String country) {
-		final String sql = "SELECT * FROM guide AS g INNER JOIN guide_lang AS gl on g.guide_id = gl.guide_id INNER JOIN guide_time AS gt ON g.guide_id=gt.guide_id WHERE gl.lang_name=? AND g.country=?  AND g.city_id=? \r\n"
-				+ "AND gt.from_date <=? AND gt.thro_day>=? AND g.status=0 AND g.lock_status=0";
-		return jdbcTemplate.query(sql, new BeanPropertyRowMapper(Guide.class), lang, country, city, startDate, endDate);
-
+	public List<Guide> getItemByLAng(String lang) {
+		final String SQL = "SELECT * FROM guide INNER JOIN guide_lang ON guide.guide_id=guide_lang.guide_id WHERE lang_name=? AND status=0 AND lock_status=0";
+		return jdbcTemplate.query(SQL, new BeanPropertyRowMapper<>(Guide.class), lang);
 	}
 
+	public List<Guide> searchGuide(String city, Date startDate, Date endDate, String lang, String country) {
+		
+		final String sql = "SELECT g.* FROM guide AS g INNER JOIN guide_lang AS gl on g.guide_id = gl.guide_id INNER JOIN guide_time AS gt ON g.guide_id=gt.guide_id WHERE gl.lang_name=? AND g.country=?  AND g.city_id=? \r\n"
+				+ "AND gt.from_date <= ? AND gt.thro_day>=? AND g.status	=0 AND g.lock_status=0";
+		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Guide.class),lang,country,city,startDate,endDate);
+
+	}
+	public static void main(String[] args) {
+		System.out.println( new GuideDAO().searchGuide("", null, null, "", ""));
+	}
 	// ok
 	public List<Guide> getItemByGender(String gender) {
 		final String SQL = "SELECT * FROM guide WHERE gender=? AND status=0 AND lock_status=0";

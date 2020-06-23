@@ -1,7 +1,7 @@
 package dtu.cdio.controllers;
 
 import java.io.IOException;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.annotation.MultipartConfig;
@@ -65,10 +65,11 @@ public class GuideRestController {
 
 	
 	@RequestMapping(value = "search", method = RequestMethod.GET)
-	public List<Guide> guideSearch(@RequestParam("location") String location, @RequestParam("country") String country,
+	public List<Guide> guideSearch(@RequestParam("city") String city, @RequestParam("country") String country,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
 			@RequestParam("language") String language) {
-		return guideService.searchGuide(location, startDate, endDate, language, country);
+		System.out.println(startDate);
+		return guideService.searchGuide(city, startDate, endDate, language, country);
 	}
 
 	@RequestMapping(value = "index/{place}", method = RequestMethod.GET)
@@ -147,5 +148,11 @@ public class GuideRestController {
 	public List<Guide> topGuide(){
 		return guideService.getTopGuideList();
 	}
+	
+	@GetMapping("lang")
+	public List<Guide> guideByLang(String lang){
+		return guideService.getItemByLang(lang);
+	}
+	
 	
 }

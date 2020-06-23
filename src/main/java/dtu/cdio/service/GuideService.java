@@ -64,6 +64,10 @@ public class GuideService {
 	public List<Guide> getItemByPlace(String city_id){
 		return guideDAO.getItemByPlace(city_id);
 	}
+	
+	public List<Guide> getItemByLang(String lang){
+		return guideDAO.getItemByLAng(lang);
+	}
 	public int lockAccountGuide(int guide_id) {
 		return guideDAO.LockAccount(guide_id);
 	}

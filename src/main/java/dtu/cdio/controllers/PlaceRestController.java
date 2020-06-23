@@ -25,7 +25,7 @@ public class PlaceRestController {
 	@Autowired
 	private PlaceService placeService;
 
-	@GetMapping("index")
+	@GetMapping("country/Vietnam")
 	public List<Place> findAll(){
 		return placeService.findAll();
 	}
