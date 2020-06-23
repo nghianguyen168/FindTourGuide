@@ -55,7 +55,7 @@ public class GuideOrderController {
 	}
 	
 	@GetMapping("guide/history")
-	public List<Guide> guide_History_Book(int guide_id){
+	public List<Guide_Order> guide_History_Book(int guide_id){
 		return guideOderService.guide_history_book(guide_id);
 	}
 	

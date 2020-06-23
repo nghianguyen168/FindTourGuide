@@ -19,5 +19,6 @@ public class Guide_Order {
 	private String place;
 	private int cost;
 	private int status;
+	private String guestname;
 
 }

@@ -74,6 +74,11 @@ public class GuideDAO {
 		final String SQL = "SELECT * FROM guide WHERE guide_id=? ";
 		return jdbcTemplate.queryForObject(SQL, new BeanPropertyRowMapper<>(Guide.class), guide_id);
 	}
+	public Guide getItemByName(String username) {
+		final String SQL = "SELECT * FROM guide WHERE username=? ";
+		return jdbcTemplate.queryForObject(SQL, new BeanPropertyRowMapper<>(Guide.class), username);
+	}
+
 
 	// ok
 	public int LockAccount(int guide_id) {

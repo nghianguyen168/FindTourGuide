@@ -90,7 +90,9 @@ public class GuideService {
 	}
 	
 	
-	
+	public Guide getGuideByUsername(String username) {
+		return  guideDAO.getItemByName(username);
+	}
 
 
 }

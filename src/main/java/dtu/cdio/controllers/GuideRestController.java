@@ -46,7 +46,7 @@ public class GuideRestController {
 	}
 	
 
-	@CrossOrigin
+	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public List<Guide> gistGuideList(@RequestParam("page") int curentPage) {
 		int numberOfItems = guideService.findAll().size();
@@ -63,7 +63,7 @@ public class GuideRestController {
 		return guideService.findAllByPage(offset);
 	}
 
-	@CrossOrigin
+	
 	@RequestMapping(value = "search", method = RequestMethod.GET)
 	public List<Guide> guideSearch(@RequestParam("location") String location, @RequestParam("country") String country,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
@@ -71,22 +71,26 @@ public class GuideRestController {
 		return guideService.searchGuide(location, startDate, endDate, language, country);
 	}
 
-	@CrossOrigin
 	@RequestMapping(value = "index/{place}", method = RequestMethod.GET)
 	public List<Guide> listByPlace(@PathVariable("place") String place) {
 		return guideService.getItemByPlace(place);
 	}
 
-	@CrossOrigin
 	@RequestMapping(value = "gender/{gender}", method = RequestMethod.GET)
 	public List<Guide> getListByGender(@PathVariable("gender") String gender) {
 		return guideService.getItemByGender(gender);
 	}
 
-	@CrossOrigin
+
 	@RequestMapping(value = "info/{guide_id}",method = RequestMethod.GET)
 	public Guide  getGuideById(@PathVariable("guide_id") int guide_id) {
 		return guideService.getGuideById(guide_id);
+	}
+
+	
+	@RequestMapping(value = "info",method = RequestMethod.GET)
+	public Guide  getGuideByUsername(@RequestParam("username") String username) {
+		return guideService.getGuideByUsername(username);
 	}
 
 	@GetMapping("check-email")
